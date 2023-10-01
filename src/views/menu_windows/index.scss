@@ -1,0 +1,92 @@
+[view="menu"] {
+    background-image: url("./images/logo.png");
+    background-repeat: no-repeat;
+    background-position: 5px center;
+    background-size: auto 70%;
+    padding-left: 19px;
+
+    &>ul {
+        margin-left: 10px;
+
+        &>li {
+            display: inline-block;
+            vertical-align: top;
+            position: relative;
+            padding: 0 10px;
+            font-size: 12px;
+
+            &:hover {
+                background-color: rgb(186, 190, 194);
+
+                &>ul {
+                    display: block;
+
+                    &>li:hover>ul {
+                        display: block;
+                    }
+                }
+            }
+
+            ul {
+                background-color: rgb(237, 239, 241);
+                border: 1px solid rgb(230, 216, 216);
+                width: 260px;
+                box-shadow: 0px 1px 3px #c5c5c7;
+                display: none;
+                padding: 0 5px;
+
+                li {
+                    line-height: 26px;
+                    margin-top: 2px;
+                    padding: 0 10px;
+                    position: relative;
+                    border-radius: 3px;
+
+                    &>em {
+                        position: absolute;
+                        right: 5px;
+                        font-style: normal;
+
+                        &.more {
+                            width: 20px;
+                            height: 100%;
+                            background-image: url("./images/toRight.png");
+                            background-repeat: no-repeat;
+                            background-position: center center;
+                        }
+                    }
+
+                    &:last-child {
+                        margin-bottom: 5px;
+                    }
+
+                    &:hover:not(.line) {
+                        background-color: #e3e3e3;
+                    }
+
+                    &.line {
+                        height: 1px;
+                        width: 248px;
+                        background-color: #c5c5c7;
+                    }
+                }
+            }
+
+            &>ul {
+                position: absolute;
+                left: -1px;
+                z-index: 1;
+
+                &>li {
+
+                    &>ul {
+                        position: absolute;
+                        top: 0;
+                        left: 248px;
+                        z-index: 2;
+                    }
+                }
+            }
+        }
+    }
+}

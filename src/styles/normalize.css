@@ -1,0 +1,45 @@
+html {
+    line-height: 1.15;
+}
+
+
+* {
+    box-sizing: border-box;
+}
+
+html {
+    font-family: sans-serif;
+}
+
+
+li {
+    list-style-type: none;
+}
+
+ul,
+ol,
+li,
+p,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    -webkit-margin-before: 0;
+    -webkit-margin-after: 0;
+    -webkit-padding-start: 0;
+    margin-block-end: 0;
+    margin-block-start: 0;
+    padding-inline-start: 0;
+    padding: 0;
+    margin: 0;
+}
+
+body {
+    margin: 0;
+}
+
+table {
+    border-collapse: collapse;
+}

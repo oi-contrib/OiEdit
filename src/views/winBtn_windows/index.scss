@@ -1,0 +1,54 @@
+[view="winBtn"] {
+    &>ul {
+        padding-right: 5px;
+        text-align: right;
+
+        &[tag="maximize"] {
+            [tag="maximize"] {
+                display: none;
+            }
+        }
+
+        &[tag="unmaximize"] {
+            [tag="unmaximize"] {
+                display: none;
+            }
+        }
+
+        &>li {
+            text-align: center;
+            width: 45px;
+            background-position-y: center;
+            display: inline-block;
+            background-image: url('./images/winBtn_windows.png');
+            font-size: 0;
+            vertical-align: top;
+            cursor: pointer;
+
+            &:hover {
+                background-color: #c7c6c6;
+            }
+
+            &[tag="minimize"] {
+                background-position-x: 3px;
+            }
+
+            &[tag="maximize"] {
+                background-position-x: 128px;
+            }
+
+            &[tag="unmaximize"] {
+                background-position-x: 166px;
+            }
+
+            &[tag="quit"] {
+                background-position-x: 82px;
+
+                &:hover {
+                    background-color: red;
+                    background-position-x: 42px;
+                }
+            }
+        }
+    }
+}

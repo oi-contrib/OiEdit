@@ -1,0 +1,79 @@
+{
+  "name": "oieditx",
+  "version": "0.1.0-dev",
+  "description": "自由、开源、持续迭代的可扩展的代码编辑器",
+  "main": "./index.js",
+  "scripts": {
+    "dev": "electron ./index.js",
+    "build": "electron-builder"
+  },
+  "keywords": [
+    "edit",
+    "oieditx",
+    "oi-contrib",
+    "electron",
+    "zxl20070701",
+    "vscode"
+  ],
+  "author": {
+    "name": "zxl20070701",
+    "url": "https://zxl20070701.github.io/notebook/home.html"
+  },
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/oi-contrib/OiEdit/issues"
+  },
+  "homepage": "https://oi-contrib.github.io/OiEdit",
+  "build": {
+    "productName": "OiEdit X",
+    "appId": "io.github.zxl20070701.oieditx",
+    "directories": {
+      "output": "release"
+    },
+    "files": [
+      "./index.html",
+      "./images/**/*",
+      "./src/**/*",
+      "./index.js",
+      "./nodejs/**/*"
+    ],
+    "fileAssociations": [],
+    "mac": {
+      "icon": "./images/logo.icns",
+      "target": [
+        {
+          "target": "dmg"
+        }
+      ]
+    },
+    "dmg": {
+      "title": "OiEdit X",
+      "icon": "./images/logo.icns"
+    },
+    "win": {
+      "icon": "./images/logo256.ico",
+      "target": [
+        {
+          "target": "nsis"
+        }
+      ]
+    },
+    "nsis": {
+      "oneClick": false,
+      "allowElevation": true,
+      "allowToChangeInstallationDirectory": true,
+      "createDesktopShortcut": true,
+      "createStartMenuShortcut": true,
+      "installerHeaderIcon": "./images/logo64.ico",
+      "installerIcon": "./images/logo64.ico"
+    }
+  },
+  "devDependencies": {
+    "electron": "^26.1.0",
+    "electron-builder": "^24.6.4"
+  },
+  "dependencies": {
+    "devby": "^0.5.1-alpha.0",
+    "vislite": "^0.4.1"
+  }
+}

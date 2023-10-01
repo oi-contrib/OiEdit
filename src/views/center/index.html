@@ -1,0 +1,28 @@
+<!-- 左侧的功能切换 -->
+<div class="switch">
+    <span ref="folder" @click="loadFolder" tag="folder" title="浏览打开的文件"></span>
+    <!-- <span ref="search" @click="loadFolder" tag="search" title="查找文件"></span> -->
+    <!-- <span ref="plug" @click="loadFolder" tag="plug" title="安装插件"></span> -->
+    <!-- <span @click="loadFolder" tag="set" title="配置"></span> -->
+</div>
+
+<!-- 中间的列表 -->
+<div class="folder">
+    <div ref="folderRoot"></div>
+    <!-- <div ref="searchRoot"></div> -->
+    <!-- <div ref="plugRoot"></div> -->
+</div>
+
+<div class="split"></div>
+
+<!-- 右边 -->
+<div class="right">
+
+    <!-- 编辑器等容器 -->
+    <div class="view" ref="view"></div>
+
+    <!-- <div class="split"></div> -->
+
+    <!-- 命令行等容器 -->
+    <!-- <div class="terminal" ref="terminal"></div> -->
+</div>

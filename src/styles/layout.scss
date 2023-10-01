@@ -1,0 +1,88 @@
+body {
+    overflow: hidden;
+}
+
+/* 滚动条 */
+*:hover::-webkit-scrollbar {
+    width: 5px;
+    height: 5px;
+    background-color: #F5F5F5;
+}
+
+*:hover::-webkit-scrollbar-thumb {
+    -webkit-box-shadow: inset 0 0 2.5px rgb(0 0 0 / 30%);
+    box-shadow: inset 0 0 2.5px rgb(0 0 0 / 30%);
+    background-color: #c1c3c6;
+    opacity: .7;
+    transition: opacity ease-in-out 200ms;
+}
+
+*:hover::-webkit-scrollbar-track {
+    -webkit-box-shadow: inset 0 0 2.5px rgb(0 0 0 / 30%);
+    box-shadow: inset 0 0 2.5px rgb(0 0 0 / 30%);
+    border-radius: 2.5px;
+    background-color: #F5F5F5;
+}
+
+#root {
+    &>div {
+        &[view="top"] {
+            background-color: #c9badf;
+            height: 30px;
+            line-height: 30px;
+            color: #747179;
+            position: relative;
+            user-select: none;
+            font-size: 14px;
+        }
+
+        &[view="center"] {
+            height: calc(100vh - 50px);
+        }
+
+        &[view="bottom"] {
+            background-color: #705697;
+            height: 20px;
+            user-select: none;
+        }
+    }
+
+    &[tag="blur"] {
+        &>div {
+            &[view="top"] {
+                background-color: #d6cfe2;
+            }
+
+            &[view="bottom"] {
+                background-color: #9c86bd;
+            }
+        }
+    }
+}
+
+#dialog {
+    &>div {
+        position: fixed;
+
+        &.mask {
+            left: 0;
+            top: 0;
+            width: 100vw;
+            height: 100vh;
+            background-color: rgba(0, 0, 0, 0.5);
+            display: none;
+
+            &:not(:last-child) {
+                display: block;
+            }
+        }
+
+        &[dialog] {
+            z-index: -1;
+
+            &:last-child {
+                z-index: 1;
+            }
+        }
+    }
+}

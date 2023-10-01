@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>OiEdit X - 自由、开源、可扩展、持续迭代的代码编辑器</title>
+    <script>
+        window._sendSync_ = window.nodeRequire.ipcRenderer.sendSync
+    </script>
+</head>
+
+<body>
+
+    <!-- 视图根结点 -->
+    <div id="root"></div>
+
+    <!-- 弹框根结点 -->
+    <div id="dialog"></div>
+
+    <script type="module">
+        import addStyle from "./src/libs/addStyle.js"
+
+        // 样式重置
+        let normalizeStyle = _sendSync_("importFile", "./styles/normalize.css")
+        addStyle(normalizeStyle)
+
+        // 布局样式
+        let layoutStyle = _sendSync_("importFile", "./styles/layout.scss")
+        addStyle(layoutStyle)
+
+        /**
+         * 主体布局
+        */
+
+        let rootEl = document.getElementById("root")
+
+        // 顶部
+        let topEl = document.createElement("div")
+        rootEl.appendChild(topEl)
+
+        import topView from './src/views/top/index.js'
+        topView(topEl)
+
+        // 中部
+        let centerEl = document.createElement("div")
+        rootEl.appendChild(centerEl)
+
+        import centerView from './src/views/center/index.js'
+        centerView(centerEl)
+
+        // 底部
+        let bottomEl = document.createElement("div")
+        rootEl.appendChild(bottomEl)
+
+        import bottomView from './src/views/bottom/index.js'
+        bottomView(bottomEl)
+
+        // 监听到窗口失去焦点
+        window.nodeRequire.receive("browserWindowBlur", () => { rootEl.setAttribute("tag", "blur") })
+
+        // 监听到窗口获得焦点
+        window.nodeRequire.receive("browserWindowFocus", () => { rootEl.setAttribute("tag", "focus") })
+
+        // 挂载弹框
+        import dialogs from './src/dialogs/index.js'
+        dialogs(document.getElementById('dialog'))
+    </script>
+</body>
+
+</html>

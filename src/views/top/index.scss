@@ -1,0 +1,22 @@
+[view="top"] {
+    white-space: nowrap;
+
+    &>div {
+        display: inline-block;
+        vertical-align: top;
+
+        &.left {
+            width: 200px;
+        }
+
+        &.title {
+            width: calc(100% - 400px);
+            text-align: center;
+            overflow: hidden;
+        }
+
+        &.right {
+            width: 200px;
+        }
+    }
+}

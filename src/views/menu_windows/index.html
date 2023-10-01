@@ -1,0 +1,40 @@
+<ul @click="hiddenMenu">
+    <li>
+        文件
+        <ul>
+            <li @click="newBlankFile">
+                新建文件
+                <em>Ctrl+N</em>
+            </li>
+            <li class='line'></li>
+            <li @click="openFile">
+                打开文件
+                <em>Ctrl+O</em>
+            </li>
+            <li @click="openFolder">
+                打开文件夹
+                <em>Ctrl+Shift+O</em>
+            </li>
+            <li>
+                最近打开
+                <em class='more'></em>
+                <ul>
+                    <li>无文件夹</li>
+                    <li class='line'></li>
+                    <li>无文件</li>
+                </ul>
+            </li>
+            <li class='line'></li>
+            <li @click="saveFile">
+                保存
+                <em>Ctrl+S</em>
+            </li>
+        </ul>
+    </li>
+    <li>
+        帮助
+        <ul>
+            <li @click="aboutUS">关于我们</li>
+        </ul>
+    </li>
+</ul>

@@ -1,0 +1,96 @@
+[view="center"] {
+    display: flex;
+
+    &>div {
+        &.switch {
+            background-color: #ffffff;
+            flex-basis: 45px;
+            flex-shrink: 0;
+            position: relative;
+            padding-top: 10px;
+
+            &>span {
+                display: inline-block;
+                background-image: url("./images/switch.png");
+                background-position-x: 0px;
+                background-repeat: no-repeat;
+                cursor: pointer;
+                width: 100%;
+                height: 50px;
+
+                &:hover,
+                &.active {
+                    background-position-x: -76px;
+                }
+
+                &.active {
+                    border-left: 2px solid #9d91af;
+                    background-color: #f2f2f2;
+                }
+
+                &[tag="folder"] {
+                    background-position-y: 0px;
+                }
+
+                &[tag="search"] {
+                    background-position-y: -63px;
+                }
+
+                &[tag="plug"] {
+                    background-position-y: -134px;
+                }
+
+                &[tag="set"] {
+                    background-position-y: -196px;
+                    position: absolute;
+                    left: 0;
+                    bottom: 0;
+                }
+            }
+        }
+
+        &.folder {
+            background-color: #fbfbfb;
+            flex-basis: 260px;
+            flex-shrink: 0;
+            overflow: auto;
+            position: relative;
+        }
+
+        &.split {
+            flex-basis: 4px;
+            flex-shrink: 0;
+            cursor: col-resize;
+            background-color: #fbfbfb;
+            position: relative;
+        }
+
+        &.right {
+            flex-grow: 1;
+            display: flex;
+            flex-direction: column;
+            overflow: hidden;
+            width: 100%;
+
+            &>div {
+                &.view {
+                    flex-grow: 1;
+                }
+
+                &.split {
+                    flex-basis: 4px;
+                    flex-shrink: 0;
+                    border-top: 1px solid #d3d3d6;
+                    cursor: row-resize;
+                }
+
+                &.terminal {
+                    flex-basis: 200px;
+                    flex-shrink: 0;
+                }
+            }
+
+        }
+
+    }
+}

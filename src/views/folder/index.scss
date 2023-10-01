@@ -1,0 +1,105 @@
+[view="folder"] {
+    font-size: 12px;
+    user-select: none;
+    height: 100%;
+
+    &>.noFolder {
+        padding: 20px 15px;
+
+        &>p {
+            line-height: 2em;
+            margin-top: 20px;
+            color: #747179;
+
+            &>a {
+                font-size: 14px;
+                color: #705697;
+            }
+        }
+
+        &>input[type='button'] {
+            line-height: 26px;
+            width: 100%;
+            margin-top: 10px;
+            color: white;
+            font-size: 12px;
+            cursor: pointer;
+            border: none;
+            outline: none;
+            background-color: #816e9e;
+
+            &:hover {
+                background-color: #705697;
+            }
+        }
+    }
+
+    &>.folder {
+        overflow: auto;
+        height: 100%;
+        padding: 10px 0;
+        display: none;
+
+        ul {
+            margin-left: 10px;
+        }
+
+        [is-open='no'] {
+            &>ul {
+                display: none;
+            }
+
+            &>span {
+                background-position-y: -40px;
+            }
+        }
+
+        [is-open='yes'] {
+            &>span {
+                background-position-y: -80px;
+            }
+        }
+
+        span {
+            background-repeat: no-repeat;
+            padding-left: 25px;
+            line-height: 2em;
+            color: #000000;
+            cursor: pointer;
+            background-image: url("./images/icon.png");
+            background-position-y: 5px;
+            font-size: 12px;
+            display: inline-block;
+            white-space: nowrap;
+
+            &[icon] {
+                background-position-x: 5px;
+                background-position-y: center;
+            }
+
+            &[icon="css"] {
+                background-image: url("./images/file-icons/CSS.png");
+            }
+
+            &[icon="html"] {
+                background-image: url("./images/file-icons/HTML.png");
+            }
+
+            &[icon="image"] {
+                background-image: url("./images/file-icons/Image.png");
+            }
+
+            &[icon="javascript"] {
+                background-image: url("./images/file-icons/JavaScript.png");
+            }
+
+            &[icon="json"] {
+                background-image: url("./images/file-icons/JSON.png");
+            }
+
+            &[icon="sass"] {
+                background-image: url("./images/file-icons/SASS.png");
+            }
+        }
+    }
+}
